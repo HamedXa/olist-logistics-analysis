@@ -1,0 +1,13 @@
+# Data files - too large for GitHub
+data/raw/*.csv
+data/processed/*.csv
+olist.db
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# System
+.DS_Store
+Thumbs.db
