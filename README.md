@@ -57,7 +57,7 @@ olist-logistics-analysis/
 └── README.md
 
 ## Dashboard
-*Tableau Public link — coming soon*
+See dashboard/screenshots/ for dashboard previews.
 
 ## Dataset
 [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — Kaggle
