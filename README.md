@@ -1,66 +1,29 @@
 # Olist Logistics Performance Analysis
 
-## Business Problem
-A logistics analytics team needs visibility into delivery performance across 
-a national fulfillment network. Key questions: Where are delays occurring? 
-What is driving the 6.8% late delivery rate? Which regions are 
-underperforming, and what operational changes would improve on-time delivery?
+I analyzed 96,000+ real orders from Olist, a Brazilian e-commerce marketplace, to figure out what was driving late deliveries and what to do about it.
 
-## Project Overview
-End-to-end logistics analytics project analyzing 96,000+ real Brazilian 
-e-commerce orders to identify delivery delay drivers, define operational KPIs, 
-and deliver actionable recommendations — structured as an internal analytics 
-engagement for a logistics operations team.
+## What I found
+- **93.2% on-time delivery** across 96,478 delivered orders. The other 6.8% arrived late.
+- **Last-mile delivery is the main problem.** Late orders spent 27.4 days in last-mile vs 7.9 for on-time ones. That's a 3.5x gap.
+- **Slow pickup makes it worse.** Late orders waited 5.8 days for carrier pickup vs 3.0 for on-time orders.
+- **March 2018 was rough.** The late rate spiked to 18.9%, nearly 3x baseline, when carrier capacity tightened.
+- **Distance hurts.** AL, MA, and RJ had the highest late rates (12-21%), mostly because of distance from distribution centers.
 
-## Key Findings
-- **On-time delivery rate: 93.2%** across 96,478 delivered orders
-- **Last-mile delivery is the primary delay driver** — late orders average 
-  27.4 days in last-mile vs 7.9 days for on-time orders (3.5x gap)
-- **Carrier pickup compounds delays** — late orders wait 5.8 days for pickup 
-  vs 3.0 days for on-time orders
-- **March 2018 spike** — late rate hit 18.9%, nearly 3x the baseline, 
-  driven by carrier capacity constraints
-- **AL, MA, and RJ states** carry the highest late rates (12–21%), driven 
-  by geographic distance from distribution centers
+## What I'd recommend
+1. Hold carriers to their SLAs on last-mile. A 27.4 vs 7.9 day gap is a carrier problem, not a warehouse problem.
+2. Flag any order not picked up within 3 days. Pickup delay is the earliest warning sign of a late delivery.
 
-## Recommendations
-1. Enforce carrier SLA contracts for last-mile delivery — the 27.4 vs 7.9 
-   day gap signals a systemic carrier performance issue requiring 
-   contract-level intervention
-2. Flag orders not picked up within 3 days as high-risk — carrier pickup 
-   delay is a leading indicator of late delivery
-
-## Tech Stack
+## How it's built
 | Layer | Tools |
 |---|---|
-| Data cleaning & analysis | Python (pandas, NumPy, seaborn, matplotlib) |
-| Database & querying | SQL (SQLite), custom KPI queries |
-| Visualization | Tableau Public |
-| Version control | Git / GitHub |
+| Analysis | Python (pandas, NumPy, seaborn, matplotlib) |
+| Queries | SQL (SQLite), custom KPI queries |
+| Dashboard | Tableau (previews in `dashboard/screenshots/`) |
 
-## Project Structure
+The notebooks walk through the whole thing in order: exploration, cleaning, KPI engineering, root-cause analysis. SQL queries are in `sql/`.
 
-olist-logistics-analysis/
-├── data/
-│   ├── raw/          ← 9 Olist CSV source files (gitignored)
-│   └── processed/    ← Cleaned and engineered datasets (gitignored)
-├── notebooks/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   ├── 03_kpi_engineering.ipynb
-│   └── 04_root_cause_analysis.ipynb
-├── sql/
-│   ├── kpi_queries.sql
-│   └── run_queries.py
-├── dashboard/
-│   └── screenshots/
-└── README.md
-
-## Dashboard
-See dashboard/screenshots/ for dashboard previews.
-
-## Dataset
-[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — Kaggle
+## Data
+The Olist Brazilian E-Commerce public dataset on Kaggle. Raw CSVs are gitignored, so download them from Kaggle if you want to reproduce the analysis.
 
 ## Author
-Hamed Sharafeldin — [LinkedIn](https://linkedin.com/in/hamed-sharafeldin-821273203) | [GitHub](https://github.com/HamedXa)
+Hamed Sharafeldin — [LinkedIn](https://www.linkedin.com/in/hamed-sharafeldin-821273203/) | [GitHub](https://github.com/HamedXa)
