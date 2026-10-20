@@ -20,7 +20,9 @@ I analyzed 96,000+ real orders from Olist, a Brazilian e-commerce marketplace, t
 | Queries | SQL (SQLite), custom KPI queries |
 | Dashboard | Tableau (previews in `dashboard/screenshots/`) |
 
-The notebooks walk through the whole thing in order: exploration, cleaning, KPI engineering, root-cause analysis. SQL queries are in `sql/`.
+`notebooks/01_data_exploration.ipynb` covers loading, date cleanup, and the headline on-time numbers. The stage breakdown (pickup vs last-mile), monthly trend, and state-level late rates come from the queries in `sql/kpi_queries.sql`.
+
+To reproduce: put the Kaggle CSVs in the repo root and, from the root, run `python "sql/python create_db.py"` to build `olist.db`, then `python sql/run_queries.py`.
 
 ## Data
 The Olist Brazilian E-Commerce public dataset on Kaggle. Raw CSVs are gitignored, so download them from Kaggle if you want to reproduce the analysis.

@@ -20,7 +20,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='tableau_master' name='textscan.05xm7dv1giymue1do577206djpwh'>
-            <connection class='textscan' directory='C:/Users/hamed/Downloads/Brazilian E-Commerce Public Dataset by Olist' filename='tableau_master.csv' password='' server='' />
+            <connection class='textscan' directory='.' filename='tableau_master.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.05xm7dv1giymue1do577206djpwh' name='tableau_master.csv' table='[tableau_master#csv]' type='table'>
